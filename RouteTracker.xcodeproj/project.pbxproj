@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3B54EB7CF772467EB2C647 /* Pods_RouteTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C307383EC6366732E1C95B /* Pods_RouteTracker.framework */; };
+		7D9D1FD5675F2050413CF02F /* Pods_RouteTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C307383EC6366732E1C95B /* Pods_RouteTracker.framework */; };
 		8B1475D127D8BCAD0036E71C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1475D027D8BCAD0036E71C /* AppDelegate.swift */; };
 		8B1475D327D8BCAD0036E71C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1475D227D8BCAD0036E71C /* SceneDelegate.swift */; };
 		8B1475D527D8BCAD0036E71C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1475D427D8BCAD0036E71C /* MapViewController.swift */; };
 		8B1475D827D8BCAD0036E71C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1475D627D8BCAD0036E71C /* Main.storyboard */; };
 		8B1475DA27D8BCAE0036E71C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1475D927D8BCAE0036E71C /* Assets.xcassets */; };
 		8B1475DD27D8BCAE0036E71C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1475DB27D8BCAE0036E71C /* LaunchScreen.storyboard */; };
+		8B77ADC92840CB4D00CE26C2 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77ADC82840CB4D00CE26C2 /* RealmService.swift */; };
+		8B77ADD12840D51200CE26C2 /* CoordinateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77ADD02840D51200CE26C2 /* CoordinateModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		8B1475D927D8BCAE0036E71C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B1475DC27D8BCAE0036E71C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B1475DE27D8BCAE0036E71C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B77ADC82840CB4D00CE26C2 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		8B77ADD02840D51200CE26C2 /* CoordinateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateModel.swift; sourceTree = "<group>"; };
 		A8C307383EC6366732E1C95B /* Pods_RouteTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouteTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CCC0EA0CEA7CB7B0C521A7 /* Pods-RouteTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouteTracker.debug.xcconfig"; path = "Target Support Files/Pods-RouteTracker/Pods-RouteTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -35,7 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D3B54EB7CF772467EB2C647 /* Pods_RouteTracker.framework in Frameworks */,
+				7D9D1FD5675F2050413CF02F /* Pods_RouteTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,15 +75,73 @@
 		8B1475CF27D8BCAD0036E71C /* RouteTracker */ = {
 			isa = PBXGroup;
 			children = (
-				8B1475D027D8BCAD0036E71C /* AppDelegate.swift */,
-				8B1475D227D8BCAD0036E71C /* SceneDelegate.swift */,
-				8B1475D427D8BCAD0036E71C /* MapViewController.swift */,
-				8B1475D627D8BCAD0036E71C /* Main.storyboard */,
-				8B1475D927D8BCAE0036E71C /* Assets.xcassets */,
-				8B1475DB27D8BCAE0036E71C /* LaunchScreen.storyboard */,
-				8B1475DE27D8BCAE0036E71C /* Info.plist */,
+				8B77ADCA2840CD9900CE26C2 /* App */,
+				8B77ADCB2840CD9F00CE26C2 /* Core */,
+				8B77ADCC2840CDA500CE26C2 /* Resources */,
+				8B77ADCD2840CDB100CE26C2 /* Environments */,
 			);
 			path = RouteTracker;
+			sourceTree = "<group>";
+		};
+		8B77ADC72840CB3300CE26C2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8B77ADC82840CB4D00CE26C2 /* RealmService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8B77ADCA2840CD9900CE26C2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8B77ADCE2840CFDA00CE26C2 /* BusinessLogic */,
+				8B77ADCF2840D4AF00CE26C2 /* Entity */,
+				8B1475D027D8BCAD0036E71C /* AppDelegate.swift */,
+				8B1475D227D8BCAD0036E71C /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8B77ADCB2840CD9F00CE26C2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8B77ADC72840CB3300CE26C2 /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8B77ADCC2840CDA500CE26C2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B1475D927D8BCAE0036E71C /* Assets.xcassets */,
+				8B1475DB27D8BCAE0036E71C /* LaunchScreen.storyboard */,
+				8B1475D627D8BCAD0036E71C /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8B77ADCD2840CDB100CE26C2 /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				8B1475DE27D8BCAE0036E71C /* Info.plist */,
+			);
+			path = Environments;
+			sourceTree = "<group>";
+		};
+		8B77ADCE2840CFDA00CE26C2 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				8B1475D427D8BCAD0036E71C /* MapViewController.swift */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		8B77ADCF2840D4AF00CE26C2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				8B77ADD02840D51200CE26C2 /* CoordinateModel.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		9B3675DE1A836441D4B245B3 /* Pods */ = {
@@ -103,6 +165,7 @@
 				8B1475CA27D8BCAD0036E71C /* Frameworks */,
 				8B1475CB27D8BCAD0036E71C /* Resources */,
 				06E71680B7463CF33C5A84B2 /* [CP] Copy Pods Resources */,
+				8F143A19598E4AFD61308978 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +240,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RouteTracker/Pods-RouteTracker-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8F143A19598E4AFD61308978 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RouteTracker/Pods-RouteTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RouteTracker/Pods-RouteTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RouteTracker/Pods-RouteTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BB103462FF70D7938CE5E409 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -208,7 +288,9 @@
 			files = (
 				8B1475D527D8BCAD0036E71C /* MapViewController.swift in Sources */,
 				8B1475D127D8BCAD0036E71C /* AppDelegate.swift in Sources */,
+				8B77ADD12840D51200CE26C2 /* CoordinateModel.swift in Sources */,
 				8B1475D327D8BCAD0036E71C /* SceneDelegate.swift in Sources */,
+				8B77ADC92840CB4D00CE26C2 /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +353,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -332,6 +415,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -359,8 +443,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6GH7HXG96;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RouteTracker/Info.plist;
+				INFOPLIST_FILE = RouteTracker/Environments/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Для примера";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -388,8 +474,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6GH7HXG96;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RouteTracker/Info.plist;
+				INFOPLIST_FILE = RouteTracker/Environments/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Для примера";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
