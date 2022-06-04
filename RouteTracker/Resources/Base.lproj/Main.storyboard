@@ -127,7 +127,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="PGg-Wh-JBL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vTm-3g-qLr"/>
