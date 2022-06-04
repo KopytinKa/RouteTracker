@@ -16,6 +16,11 @@
 		8B1475DD27D8BCAE0036E71C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1475DB27D8BCAE0036E71C /* LaunchScreen.storyboard */; };
 		8B77ADC92840CB4D00CE26C2 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77ADC82840CB4D00CE26C2 /* RealmService.swift */; };
 		8B77ADD12840D51200CE26C2 /* CoordinateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77ADD02840D51200CE26C2 /* CoordinateModel.swift */; };
+		8B9872BD284BCCAA00D6D770 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9872BC284BCCAA00D6D770 /* UserModel.swift */; };
+		8BA5BB60284BD0C8008FF922 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5BB5F284BD0C8008FF922 /* LoginViewController.swift */; };
+		8BA5BB62284BD62F008FF922 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5BB61284BD62F008FF922 /* BaseCoordinator.swift */; };
+		8BA5BB65284BD7ED008FF922 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5BB64284BD7ED008FF922 /* AppCoordinator.swift */; };
+		8BA5BB67284BDC2C008FF922 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5BB66284BDC2C008FF922 /* AuthCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		8B1475DE27D8BCAE0036E71C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B77ADC82840CB4D00CE26C2 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		8B77ADD02840D51200CE26C2 /* CoordinateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateModel.swift; sourceTree = "<group>"; };
+		8B9872BC284BCCAA00D6D770 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		8BA5BB5F284BD0C8008FF922 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8BA5BB61284BD62F008FF922 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		8BA5BB64284BD7ED008FF922 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		8BA5BB66284BDC2C008FF922 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		A8C307383EC6366732E1C95B /* Pods_RouteTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouteTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CCC0EA0CEA7CB7B0C521A7 /* Pods-RouteTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouteTracker.debug.xcconfig"; path = "Target Support Files/Pods-RouteTracker/Pods-RouteTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +104,7 @@
 		8B77ADCA2840CD9900CE26C2 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				8BA5BB63284BD7D4008FF922 /* Coordinator */,
 				8B77ADCE2840CFDA00CE26C2 /* BusinessLogic */,
 				8B77ADCF2840D4AF00CE26C2 /* Entity */,
 				8B1475D027D8BCAD0036E71C /* AppDelegate.swift */,
@@ -131,7 +142,8 @@
 		8B77ADCE2840CFDA00CE26C2 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
-				8B1475D427D8BCAD0036E71C /* MapViewController.swift */,
+				8BA5BB69284BEDFF008FF922 /* Login */,
+				8BA5BB68284BEDFA008FF922 /* Map */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -140,8 +152,35 @@
 			isa = PBXGroup;
 			children = (
 				8B77ADD02840D51200CE26C2 /* CoordinateModel.swift */,
+				8B9872BC284BCCAA00D6D770 /* UserModel.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		8BA5BB63284BD7D4008FF922 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				8BA5BB61284BD62F008FF922 /* BaseCoordinator.swift */,
+				8BA5BB64284BD7ED008FF922 /* AppCoordinator.swift */,
+				8BA5BB66284BDC2C008FF922 /* AuthCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		8BA5BB68284BEDFA008FF922 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				8B1475D427D8BCAD0036E71C /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		8BA5BB69284BEDFF008FF922 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8BA5BB5F284BD0C8008FF922 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		9B3675DE1A836441D4B245B3 /* Pods */ = {
@@ -286,11 +325,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA5BB67284BDC2C008FF922 /* AuthCoordinator.swift in Sources */,
+				8BA5BB60284BD0C8008FF922 /* LoginViewController.swift in Sources */,
 				8B1475D527D8BCAD0036E71C /* MapViewController.swift in Sources */,
 				8B1475D127D8BCAD0036E71C /* AppDelegate.swift in Sources */,
 				8B77ADD12840D51200CE26C2 /* CoordinateModel.swift in Sources */,
 				8B1475D327D8BCAD0036E71C /* SceneDelegate.swift in Sources */,
+				8B9872BD284BCCAA00D6D770 /* UserModel.swift in Sources */,
+				8BA5BB65284BD7ED008FF922 /* AppCoordinator.swift in Sources */,
 				8B77ADC92840CB4D00CE26C2 /* RealmService.swift in Sources */,
+				8BA5BB62284BD62F008FF922 /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
