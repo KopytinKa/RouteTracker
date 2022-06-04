@@ -31,6 +31,17 @@ class RealmService: RealmServiceProtocol {
             print(error.localizedDescription)
         }
     }
+    
+    func add(model: Object) {
+        do {
+            self.realm.beginWrite()
+            self.realm.add(model, update: .modified)
+            try self.realm.commitWrite()
+            print(realm.configuration.fileURL as Any)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 
     func read(object: Object.Type) -> [Object] {
         let models = self.realm.objects(object)

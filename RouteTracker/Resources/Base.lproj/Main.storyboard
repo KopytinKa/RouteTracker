@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7X5-Mm-2OM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -11,7 +11,7 @@
         <!--Карта-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="RouteTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="BYZ-38-t0r" customClass="MapViewController" customModule="RouteTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,6 +82,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="93.75"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="AKg-yW-Xyr">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qYD-wH-QFc" customClass="LoginViewController" customModule="RouteTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hc9-wu-QUa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfp-bZ-PIa">
+                                <rect key="frame" x="144.5" y="442" width="125" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="xfV-Qj-Cqx"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Вход"/>
+                                <connections>
+                                    <action selector="pressLoginButton:" destination="qYD-wH-QFc" eventType="touchUpInside" id="bCD-VZ-YYb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oj0-Z1-Hvy">
+                                <rect key="frame" x="144.5" y="503" width="125" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="WIM-vu-eg5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Регистрация"/>
+                                <connections>
+                                    <action selector="pressRegistrButton:" destination="qYD-wH-QFc" eventType="touchUpInside" id="UVf-YB-4Wu"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x8k-FZ-KZg">
+                                <rect key="frame" x="107" y="294" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="3JD-oO-2W0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iOR-tw-7wJ">
+                                <rect key="frame" x="107" y="358" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="PGg-Wh-JBL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vTm-3g-qLr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iOR-tw-7wJ" firstAttribute="centerX" secondItem="vTm-3g-qLr" secondAttribute="centerX" id="APz-q9-HTe"/>
+                            <constraint firstItem="vfp-bZ-PIa" firstAttribute="top" secondItem="iOR-tw-7wJ" secondAttribute="bottom" constant="50" id="BVb-7B-da5"/>
+                            <constraint firstItem="Oj0-Z1-Hvy" firstAttribute="top" secondItem="vfp-bZ-PIa" secondAttribute="bottom" constant="30" id="MQl-55-ocm"/>
+                            <constraint firstItem="Oj0-Z1-Hvy" firstAttribute="centerX" secondItem="vTm-3g-qLr" secondAttribute="centerX" id="NxI-re-PRk"/>
+                            <constraint firstItem="vfp-bZ-PIa" firstAttribute="centerX" secondItem="vTm-3g-qLr" secondAttribute="centerX" id="Ufu-z3-n8v"/>
+                            <constraint firstItem="x8k-FZ-KZg" firstAttribute="centerX" secondItem="vTm-3g-qLr" secondAttribute="centerX" id="gQ6-wQ-53V"/>
+                            <constraint firstItem="x8k-FZ-KZg" firstAttribute="top" secondItem="vTm-3g-qLr" secondAttribute="top" constant="250" id="kpv-8a-SEx"/>
+                            <constraint firstItem="iOR-tw-7wJ" firstAttribute="top" secondItem="x8k-FZ-KZg" secondAttribute="bottom" constant="30" id="y82-rx-qGP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="x8k-FZ-KZg" id="qcc-Gg-WFE"/>
+                        <outlet property="passwordTextField" destination="iOR-tw-7wJ" id="1Q5-52-yX1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0Q-5u-Qfh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1316" y="94"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xRv-Fa-nie">

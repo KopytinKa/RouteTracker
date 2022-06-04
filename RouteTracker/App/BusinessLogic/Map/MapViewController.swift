@@ -31,7 +31,6 @@ class MapViewController: UIViewController {
     }
     
     // -MARK: Private
-    
     func configureMap() {
         self.locationManager?.requestLocation()
 
@@ -101,7 +100,6 @@ class MapViewController: UIViewController {
     }
     
     // -MARK: Action
-    
     @IBAction func updateLocation(_ sender: Any) {
         if self.recordUpdatingLocation {
             self.locationManager?.stopUpdatingLocation()
