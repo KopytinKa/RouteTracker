@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMaps
+import UserNotifications
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -28,13 +29,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         coordinator?.start()
         
         return
-    }
-
-    func sceneDidDisconnect(_ scene: UIScene) {
-        // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
-        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
@@ -64,8 +58,38 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        self.sendNotificationRequest(
+            content: self.makeNotificationContent(),
+            trigger: self.makeIntervalNotificationTrigger()
+        )
     }
 
+    func sendNotificationRequest(content: UNNotificationContent, trigger: UNNotificationTrigger) {
+        let request = UNNotificationRequest(
+            identifier: "alarm",
+            content: content,
+            trigger: trigger
+        )
+        
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func makeNotificationContent() -> UNNotificationContent {
+        let content = UNMutableNotificationContent()
+        content.title = "Ты куда пропал?"
+        content.subtitle = "Вернись!"
+        content.body = "Я ВСЕ ПРОЩУ!"
+        return content
+    }
+    
+    func makeIntervalNotificationTrigger() -> UNNotificationTrigger {
+        return UNTimeIntervalNotificationTrigger (timeInterval: 20, repeats: false)
+    }
 
 }
 
