@@ -13,7 +13,7 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
     
-    var locationManager: CLLocationManager?
+    var locationManager = LocationManagerService.instance
     let realmService = RealmService()
     
     var route: GMSPolyline?
@@ -32,9 +32,9 @@ class MapViewController: UIViewController {
     
     // -MARK: Private
     func configureMap() {
-        self.locationManager?.requestLocation()
+        self.locationManager.locationManager.requestLocation()
 
-        if let coordinate = self.locationManager?.location?.coordinate {
+        if let coordinate = self.locationManager.locationManager.location?.coordinate {
             let camera = GMSCameraPosition.camera(withTarget: coordinate, zoom: self.zoom)
             self.mapView.camera = camera
             self.addMarkerByPosition(coordinate)
@@ -42,12 +42,20 @@ class MapViewController: UIViewController {
     }
     
     func configureLocationManager() {
-        self.locationManager = CLLocationManager()
-        self.locationManager?.delegate = self
-        self.locationManager?.allowsBackgroundLocationUpdates = true
-        self.locationManager?.pausesLocationUpdatesAutomatically = false
-        self.locationManager?.startMonitoringSignificantLocationChanges()
-        self.locationManager?.requestAlwaysAuthorization()
+        self.locationManager
+            .location
+            .asObservable()
+            .bind { [weak self] location in
+                guard
+                    let location = location,
+                    let self = self
+                else { return }
+                self.routePath?.add(location.coordinate)
+                self.route?.path = self.routePath
+                
+                let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: self.zoom)
+                self.mapView.animate(to: position)
+            }
     }
     
     func addMarkerByPosition(_ position: CLLocationCoordinate2D) {
@@ -75,8 +83,7 @@ class MapViewController: UIViewController {
     
     func clearPathAndStopUpdatingLocation() {
         self.routePath?.removeAllCoordinates()
-        self.locationManager?.startMonitoringSignificantLocationChanges()
-        self.locationManager?.stopUpdatingLocation()
+        self.locationManager.stopUpdatingLocation()
         self.recordUpdatingLocation = false
     }
     
@@ -102,9 +109,9 @@ class MapViewController: UIViewController {
     // -MARK: Action
     @IBAction func updateLocation(_ sender: Any) {
         if self.recordUpdatingLocation {
-            self.locationManager?.stopUpdatingLocation()
+            self.locationManager.stopUpdatingLocation()
         } else {
-            self.locationManager?.startUpdatingLocation()
+            self.locationManager.startUpdatingLocation()
         }
         self.recordUpdatingLocation.toggle()
     }
@@ -118,7 +125,7 @@ class MapViewController: UIViewController {
         self.route = GMSPolyline()
         self.routePath = GMSMutablePath()
         self.route?.map = self.mapView
-        self.locationManager?.startUpdatingLocation()
+        self.locationManager.startUpdatingLocation()
         self.recordUpdatingLocation = true
     }
     
@@ -145,20 +152,5 @@ class MapViewController: UIViewController {
         } else {
             self.loadLastTrack()
         }
-    }
-}
-
-extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-                
-        self.routePath?.add(location.coordinate)
-        self.route?.path = self.routePath
-        let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: self.zoom)
-        self.mapView.animate(to: position)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
     }
 }

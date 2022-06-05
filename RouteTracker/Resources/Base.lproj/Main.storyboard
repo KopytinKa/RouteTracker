@@ -144,6 +144,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="vfp-bZ-PIa" id="5ZO-KD-Jgq"/>
                         <outlet property="loginTextField" destination="x8k-FZ-KZg" id="qcc-Gg-WFE"/>
                         <outlet property="passwordTextField" destination="iOR-tw-7wJ" id="1Q5-52-yX1"/>
                     </connections>
