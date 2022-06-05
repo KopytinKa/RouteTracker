@@ -9,5 +9,7 @@ target 'RouteTracker' do
   pod 'GoogleMaps'
   pod 'RealmSwift'
   pod 'DynamicJSON'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
 end

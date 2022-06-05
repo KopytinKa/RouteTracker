@@ -21,6 +21,7 @@
 		8BA5BB62284BD62F008FF922 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5BB61284BD62F008FF922 /* BaseCoordinator.swift */; };
 		8BA5BB65284BD7ED008FF922 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5BB64284BD7ED008FF922 /* AppCoordinator.swift */; };
 		8BA5BB67284BDC2C008FF922 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5BB66284BDC2C008FF922 /* AuthCoordinator.swift */; };
+		8BA5BB6B284CCA59008FF922 /* LocationManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5BB6A284CCA59008FF922 /* LocationManagerService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		8BA5BB61284BD62F008FF922 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		8BA5BB64284BD7ED008FF922 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8BA5BB66284BDC2C008FF922 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		8BA5BB6A284CCA59008FF922 /* LocationManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerService.swift; sourceTree = "<group>"; };
 		A8C307383EC6366732E1C95B /* Pods_RouteTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RouteTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CCC0EA0CEA7CB7B0C521A7 /* Pods-RouteTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RouteTracker.debug.xcconfig"; path = "Target Support Files/Pods-RouteTracker/Pods-RouteTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				8B77ADC82840CB4D00CE26C2 /* RealmService.swift */,
+				8BA5BB6A284CCA59008FF922 /* LocationManagerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				8B9872BD284BCCAA00D6D770 /* UserModel.swift in Sources */,
 				8BA5BB65284BD7ED008FF922 /* AppCoordinator.swift in Sources */,
 				8B77ADC92840CB4D00CE26C2 /* RealmService.swift in Sources */,
+				8BA5BB6B284CCA59008FF922 /* LocationManagerService.swift in Sources */,
 				8BA5BB62284BD62F008FF922 /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

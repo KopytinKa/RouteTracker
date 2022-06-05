@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class LoginViewController: UIViewController {
     
@@ -15,11 +17,18 @@ class LoginViewController: UIViewController {
             passwordTextField.autocorrectionType = .no
         }
     }
+    @IBOutlet weak var loginButton: UIButton!
     
     let realmService = RealmService()
     
     var onLogin: (() -> Void)?
     var onRegister: (() -> Void)?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.configureLoginBindings()
+    }
     
     // MARK: Private
     private func showLoginError() {
@@ -28,6 +37,20 @@ class LoginViewController: UIViewController {
         
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func configureLoginBindings() {
+        Observable
+            .combineLatest(
+                self.loginTextField.rx.text,
+                self.passwordTextField.rx.text
+            )
+            .map { login, password in
+                return !(login ?? "").isEmpty && (password ?? "").count >= 6
+            }
+            .bind { [weak loginButton] inputFilled in
+                loginButton?.isEnabled = inputFilled
+            }
     }
     
     // MARK: Action
