@@ -92,9 +92,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfp-bZ-PIa">
-                                <rect key="frame" x="144.5" y="442" width="125" height="31"/>
+                                <rect key="frame" x="142" y="442" width="130" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="xfV-Qj-Cqx"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="xfV-Qj-Cqx"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Вход"/>
@@ -103,9 +103,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oj0-Z1-Hvy">
-                                <rect key="frame" x="144.5" y="503" width="125" height="31"/>
+                                <rect key="frame" x="142" y="503" width="130" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="WIM-vu-eg5"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="WIM-vu-eg5"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Регистрация"/>
@@ -129,12 +129,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dV-kt-w5a">
+                                <rect key="frame" x="142" y="664" width="130" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="5Uw-qf-YRe"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Сделать селфи"/>
+                                <connections>
+                                    <action selector="pressSelfieButton:" destination="qYD-wH-QFc" eventType="touchUpInside" id="cpH-0c-vyh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vTm-3g-qLr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iOR-tw-7wJ" firstAttribute="centerX" secondItem="vTm-3g-qLr" secondAttribute="centerX" id="APz-q9-HTe"/>
+                            <constraint firstItem="6dV-kt-w5a" firstAttribute="centerX" secondItem="vTm-3g-qLr" secondAttribute="centerX" id="B83-aG-bK8"/>
                             <constraint firstItem="vfp-bZ-PIa" firstAttribute="top" secondItem="iOR-tw-7wJ" secondAttribute="bottom" constant="50" id="BVb-7B-da5"/>
+                            <constraint firstItem="6dV-kt-w5a" firstAttribute="top" secondItem="Oj0-Z1-Hvy" secondAttribute="bottom" constant="130" id="CLL-29-rs8"/>
                             <constraint firstItem="Oj0-Z1-Hvy" firstAttribute="top" secondItem="vfp-bZ-PIa" secondAttribute="bottom" constant="30" id="MQl-55-ocm"/>
                             <constraint firstItem="Oj0-Z1-Hvy" firstAttribute="centerX" secondItem="vTm-3g-qLr" secondAttribute="centerX" id="NxI-re-PRk"/>
                             <constraint firstItem="vfp-bZ-PIa" firstAttribute="centerX" secondItem="vTm-3g-qLr" secondAttribute="centerX" id="Ufu-z3-n8v"/>
